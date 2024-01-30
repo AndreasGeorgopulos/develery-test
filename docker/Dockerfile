@@ -33,9 +33,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN apt upgrade -y
 RUN apt install npm -y --fix-missing
 
-# Install Symfony Cli
-COPY ./docker/php-apache/symfony-cli-installer /root/symfony-cli-installer
-RUN /root/symfony-cli-installer
-RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
-
 RUN a2enmod rewrite

@@ -12,7 +12,6 @@ services:
     volumes:
       - ./:/var/www/html
       - ./docker/php-apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
-      - ./docker/php-apache/php.ini://usr/local/etc/php/php.ini
     ports:
       - "2800:80"
     depends_on:

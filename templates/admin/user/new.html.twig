@@ -1,0 +1,9 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Új felhasználó{% endblock %}
+
+{% block body %}
+    <h1 class="h1 mt-3 mb-4">Új felhasználó</h1>
+
+    {{ include('admin/user/_form.html.twig', {button_label: 'Létrehoz', button_class: 'btn btn-success btn-sm'}) }}
+{% endblock %}

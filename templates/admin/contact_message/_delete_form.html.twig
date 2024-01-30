@@ -1,0 +1,6 @@
+<form method="post" class="d-inline" action="{{ path('admin_contact_message_delete', {'id': contact_message.id}) }}" onsubmit="return confirm('Biztos, hogy törölni akarod ezt az üzenetet?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact_message.id) }}">
+    <button class="btn btn-danger btn-sm">
+        <i class="fas fa-trash"></i> Törlés
+    </button>
+</form>

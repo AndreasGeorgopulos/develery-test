@@ -1,0 +1,38 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Üzenetek{% endblock %}
+
+{% block body %}
+    <h1 class="h1 mt-3 mb-4">Üzenetek</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Teljes név</th>
+                <th>E-mail cím</th>
+                <th>Létrehozva</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact_message in contact_messages %}
+            <tr>
+                <td>{{ contact_message.id }}</td>
+                <td>{{ contact_message.name }}</td>
+                <td>{{ contact_message.email }}</td>
+                <td>{{ contact_message.createdAt ? contact_message.createdAt|date('Y.m.d. H:i') : '' }}</td>
+                <td class="text-end">
+                    <a href="{{ path('admin_contact_message_show', {'id': contact_message.id}) }}" class="btn btn-outline-info btn-sm">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7" class="text-center">Nincs megjeleníthető elem</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
